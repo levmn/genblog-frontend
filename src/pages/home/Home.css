@@ -1,9 +1,7 @@
-.titulo{
-    color: #69814d;
-    text-align: center;
+.homeBg{
+    background-color: black;
 }
 
-.img{
-    display: block;
-    margin: 0 auto;
+.imgBg{
+    background-image: url(https://imgur.com/pn8qBdv.gif);
 }
