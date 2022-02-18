@@ -1,3 +1,19 @@
 .bg{
-    background: linear-gradient(36deg, #000000 30%,  #000000);
+    background: linear-gradient(to right, #0f9b0f 0%, #000000 20%);
 }
+
+.bar{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+.m{
+    margin: 3px;
+}
+
+.text-decorator-none{
+    text-decoration: none;    
+}
+
+

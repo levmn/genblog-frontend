@@ -1,3 +1,11 @@
 .footerBg{
     background-color: black;
 }
+
+.m{
+    margin: 0 10px;
+}
+
+.text-decorator-none{
+    text-decoration: none;    
+}

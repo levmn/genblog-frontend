@@ -7,29 +7,29 @@ import './Footer.css'
 function Footer() {
   return (
     <>
-      <Grid container direction="row" justifyContent="center" alignItems="center">
+      <Grid container direction="row" justifyContent="center" alignItems="center" className="footerBg">
         <Grid alignItems="center" item xs={12}>
-          <Box style={{ backgroundColor: "black", height: "130px" }}>
+          <Box style={{ height: "130px" }}>
             <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
               <Typography variant="h6" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais</Typography>
             </Box>
-
-            <Box display="flex" alignItems="center" justifyContent="center">
+            
+            <Box display="flex" alignItems="center" justifyContent="center" className="m">
               <a href="https://github.com/levmn" target="_blank" rel="noreferrer">
                 <GitHubIcon style={{ fontSize: 30, color: "white" }}/>
               </a>
-              <a href="https://www.linkedin.com/in/levmn/" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/levmn/" target="_blank" rel="noreferrer" className="m">
                 <LinkedInIcon style={{ fontSize: 40, color: "white" }}/>
               </a>
             </Box>
           </Box>
-          <Box style={{height: "61px" }} className="footerBg">
+          <Box style={{height: "61px" }}>
             <Box paddingTop={1}>
               <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright</Typography>
             </Box>
             <Box>
-              <a target="_blank" href="https://brasil.generation.org" rel="noreferrer">
-                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
+              <a target="_blank" href="https://brasil.generation.org" rel="noreferrer" className="text-decorator-none">
+                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">Generation Brasil</Typography>
               </a>
             </Box>
           </Box>

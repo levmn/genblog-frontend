@@ -1,7 +1,17 @@
 .homeBg{
-    background-color: black;
+    background-color: black!important;
+    background-size: cover;
 }
 
-.imgBg{
-    background-image: url(https://imgur.com/pn8qBdv.gif);
+/* .imgBg{
+    background-image: url(https://imgur.com/KLhHQVv.png); 
+    background-repeat: "no-repeat";
+    width: "100vh";
+    height: "100vh";
+    background-size: "cover";
+     background-position: "center"
+} */
+
+.img{
+    width: 100%;
 }
