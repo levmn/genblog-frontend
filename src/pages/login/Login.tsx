@@ -10,7 +10,7 @@ function Login(){
                 <Box paddingX={20}>
                     <form>
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" 
-                        align="center" style={{ fontWeight: "bold" }}>
+                        align="center" className='login'>
                             Entrar
                         </Typography>
                         <TextField id="usuario" label="usuário" variant="outlined" name="usuario" margin="normal"
@@ -19,8 +19,7 @@ function Login(){
                         type="password" fullWidth/>
                         <Box marginTop={2} textAlign="center">
                             <Link to="/home" className="text-decorator-none">
-                                <Button type="submit" variant="outlined" style={{ borderRadius: 10,
-                                 backgroundColor: "#0f9b0f", color: "white" }}>
+                                <Button type="submit" variant="outlined" className='button'>
                                     Logar
                                 </Button>
                             </Link>
@@ -32,15 +31,13 @@ function Login(){
                                 Não tem uma conta?
                             </Typography>
                         </Box>
-                        <Typography variant="subtitle1" gutterBottom align="center" style={{ fontWeight: "bold" }}>
+                        <Typography variant="subtitle1" gutterBottom align="center" className='login'>
                             Cadastre-se.
                         </Typography>
                     </Box>
                 </Box>
             </Grid>
-            <Grid xs={6} style={{ backgroundImage: `url(https://imgur.com/ondyj7U.gif)`, 
-                backgroundRepeat: "no-repeat", width: "100vh", minHeight: "100vh", backgroundSize: "cover",
-                backgroundPosition: "center" }}>
+            <Grid xs={6} className='loginbg'>
             </Grid>
         </Grid>
     );

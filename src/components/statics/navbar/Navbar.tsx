@@ -36,18 +36,20 @@ function Navbar() {
   return (
     <div className={classes.root}>
    
-   <AppBar position="static" className="bg">
-      <Toolbar variant="dense" className="bar">
+   <AppBar position="static" className='bg'>
+      <Toolbar variant="dense" className='bar'>
          
         <Box>
-          <Typography variant="h6">
-            BlogPessoal
-          </Typography>
+        <Link to="/home" className='text-decorator-none'>
+            <Typography variant="h6" className='titulo'>
+              BlogPessoal
+            </Typography>
+        </Link>
         </Box>
 
         <Box display="flex">
                     <Box className='m'>
-                      <Link to="/home" className="text-decorator-none">
+                      <Link to="/home" className='text-decorator-none'>
                         <Button color="inherit" style={{color: 'white'}}>home</Button>
                       </Link>
                     </Box>

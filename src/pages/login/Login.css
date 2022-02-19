@@ -1,3 +1,37 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.login{
+    font-weight: bold!important;
+}
+
+.button{
+    color: black!important;
+    background: white!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+    
+}
+
+.button:hover,
+.button:focus{
+    color: white!important;
+    background: #095f04!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.loginbg{
+    background-image: url(../../assets/img/numbers.gif);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh; 
+    background-size: cover;
+    background-position: center;
+}
+
+.loginbg:hover{
+    background-image: url(../../assets/img/binary-duck.gif);
+    transition: width .35s ease-in-out;
+}
