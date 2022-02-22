@@ -30,8 +30,3 @@
     background-size: cover;
     background-position: center;
 }
-
-.loginbg:hover{
-    background-image: url(../../assets/img/binary-duck.gif);
-    transition: width .35s ease-in-out;
-}
