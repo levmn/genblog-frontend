@@ -2,10 +2,12 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Navbar from './components/statics/navbar/Navbar';
 import Footer from './components/statics/footer/Footer';
-import CadastroUsuario from './pages/cadastroUsuario/CadastroUsuario';
+import RegisterUser from './pages/register/Register';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import './App.css';
+import ThemeList from './components/themes/themelist/ThemeList';
+import PostsList from './components/posts/postslist/PostsList';
 
 
 function App() {
@@ -28,7 +30,15 @@ function App() {
           </Route>
 
           <Route path='/cadastrar'>
-            <CadastroUsuario/>
+            <RegisterUser/>
+          </Route>
+
+          <Route path='/temas'>
+            <ThemeList/>
+          </Route>
+
+          <Route path='/posts'>
+            <PostsList/>
           </Route>
 
         </div>

@@ -1,0 +1,48 @@
+.register{
+    font-weight: bold!important;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.register-bg{
+    background-image: url(../../assets/img/cat-code.gif);
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh; 
+    background-size: cover;
+    background-position: center;
+}
+
+.cancel-button{
+    color: black!important;
+    background: white!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+    margin-right: 20px!important;
+}
+
+.cancel-button:hover,
+.cancel-button:focus{
+    color: white!important;
+    background: grey!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}
+
+.register-button{
+    color: black!important;
+    background: white!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+    
+}
+
+.register-button:hover,
+.register-button:focus{
+    color: white!important;
+    background: #095f04!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}

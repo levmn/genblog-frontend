@@ -1,16 +1,10 @@
 .homeBg{
-    background-image: url('../../assets/img/cat-code.gif');
-    background-position: center;
-    background-repeat: no-repeat;
     background-color: black!important;
+    background-image: url('../../assets/img/matrix.gif');
+    background-position: top;
     background-size: cover;
-    width: "100vh";
-    height: "100vh";
+    background-repeat: no-repeat;
     min-height: calc(100vh);
-}
-
-.img{
-    width: 100%;
 }
 
 .title{
