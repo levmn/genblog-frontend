@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 import { AppBar, Tab, Tabs, Typography, Box } from '@material-ui/core';
 import { TabContext, TabPanel } from '@material-ui/lab';
-import ListaPostagem from '../postslist/PostsList';
-import './PostsTab.css';
+import PostList from '../postslist/PostList';
+import './PostTab.css';
 
-
-function PostsTab() {
+function PostTab() {
 
     const [value, setValue] = useState('1')
     function handleChange(event: React.ChangeEvent<{}>, newValue: string){
@@ -23,7 +22,7 @@ function PostsTab() {
         </AppBar>
         <TabPanel value="1" >
           <Box display="flex" flexWrap="wrap" justifyContent="center">
-            <ListaPostagem />
+            <PostList/>
           </Box>
         </TabPanel>
 
@@ -40,7 +39,7 @@ function PostsTab() {
               </Typography>
             </Box>
             <Box>
-              <img src="https://imgur.com/Ze1aPCc.png" className='aboutimg' alt="obsolete computer" />
+              <img src="https://imgur.com/vGwDB72.gif" className='aboutimg' alt="obsolete computer" />
             </Box>
           </Box>
         </TabPanel>
@@ -50,4 +49,4 @@ function PostsTab() {
   );
 }
 
-export default PostsTab;
+export default PostTab;

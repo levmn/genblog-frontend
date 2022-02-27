@@ -1,0 +1,19 @@
+.cursor{
+    cursor: pointer;
+}
+
+.modal-button{
+    color: black!important;
+    background: white!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+    margin-right: 20px!important;
+}
+
+.modal-button:hover,
+.modal-button:focus{
+    color: white!important;
+    background: grey!important;
+    font-weight: bold!important;
+    border-radius: 10px!important;
+}

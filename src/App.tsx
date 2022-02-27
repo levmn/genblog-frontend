@@ -5,9 +5,14 @@ import Footer from './components/statics/footer/Footer';
 import RegisterUser from './pages/register/Register';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
-import './App.css';
 import ThemeList from './components/themes/themelist/ThemeList';
-import PostsList from './components/posts/postslist/PostsList';
+import PostList from './components/posts/postslist/PostList';
+import RegisterPost from './components/posts/registerposts/RegisterPost';
+import RegisterTheme from './components/themes/registertheme/RegisterTheme';
+import DeletePost from './components/posts/deleteposts/DeletePost';
+import DeleteTheme from './components/themes/deletetheme/DeleteTheme';
+import './App.css';
+
 
 
 function App() {
@@ -37,8 +42,32 @@ function App() {
             <ThemeList/>
           </Route>
 
-          <Route path='/posts'>
-            <PostsList/>
+          <Route path='/postagens'>
+            <PostList/>
+          </Route>
+
+          <Route exact path='/formulariopost'>
+            <RegisterPost/>
+          </Route>
+
+          <Route exact path='/formulariopost/:id'>
+            <RegisterPost/>
+          </Route>
+
+          <Route exact path='/formulariotema'>
+            <RegisterTheme/>
+          </Route>
+
+          <Route exact path='/formulariotema/:id'>
+            <RegisterTheme/>
+          </Route>
+
+          <Route path='/deletarpost/:id'>
+            <DeletePost/>
+          </Route>
+
+          <Route path='/deletartema/id'>
+            <DeleteTheme/>
           </Route>
 
         </div>
