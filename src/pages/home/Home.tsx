@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {Box, Grid, Typography, Button} from '@material-ui/core';
 import PostsTab from '../../components/posts/poststab/PostTab';
 import ModalPost from '../../components/posts/modalposts/ModalPost';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import './Home.css';
 
@@ -34,14 +34,18 @@ function Home() {
                   <ModalPost/>
                 </Box>
                 <Box>
-                  <Button variant="outlined" className='button'>Ver Postagens</Button>
+                  <Link to='/postagens' className='text-decorator-none'>
+                    <Button variant="outlined" className='button'>Ver Postagens</Button>
+                  </Link>
                 </Box>
               </Box>
             </Box>
           </Grid>
           
-          <Grid item xs={6}>       
+          <Grid item xs={6}>  
+            <img src="https://imgur.com/tSU1ILO.png" alt="" /> 
           </Grid>
+
           <Grid xs={12} className='postagens'>
             <PostsTab/>
           </Grid>

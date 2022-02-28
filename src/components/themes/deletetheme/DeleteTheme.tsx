@@ -3,7 +3,7 @@ import {Box, Card, CardActions, CardContent, Button, Typography} from '@material
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { buscaId, deleteId } from '../../../services/Service';
-import Tema from '../../../models/Theme'
+import Tema from '../../../models/Theme';
 import './DeleteTheme.css';
 
 function DeleteTheme() {

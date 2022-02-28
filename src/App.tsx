@@ -66,7 +66,7 @@ function App() {
             <DeletePost/>
           </Route>
 
-          <Route path='/deletartema/id'>
+          <Route path='/deletartema/:id'>
             <DeleteTheme/>
           </Route>
 

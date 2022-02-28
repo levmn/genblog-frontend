@@ -51,7 +51,7 @@ function RegisterPost() {
     }, [id])
 
     async function getTema() {
-        await busca("/temas", setTema, {
+        await busca("/temas", setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -92,28 +92,27 @@ function RegisterPost() {
                     'Authorization': token
                 }
             })
-            alert('Post atualizado com sucesso!');
+            alert('Seu post foi publicado com sucesso!');
         }
         back()
 
     }
 
     function back() {
-        history.push('/post')
+        history.push('/postagens')
     }
 
     return (
         <Container maxWidth="sm" className="top">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Faça uma postagem!</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Faça um post!</Typography>
                 <TextField value={posts.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)} id="titulo" 
-                label="título" variant="outlined" name="título" margin="normal" fullWidth />
+                label="título" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={posts.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)} id="texto" 
                 label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl>
-                    <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
-
+                    <InputLabel id="demo-simple-select-helper-label">tema</InputLabel>
                     <Select
                          labelId="demo-simple-select-helper-label"
                          id="demo-simple-select-helper"
@@ -129,9 +128,9 @@ function RegisterPost() {
                          }
                     </Select>
 
-                    <FormHelperText>Escolha um tema para a postagem.</FormHelperText>
+                    <FormHelperText>Escolha um tema para o seu post.</FormHelperText>
                     <Button type="submit" variant="contained" className='button'>
-                        Finalizar
+                        Publicar
                     </Button>
                 </FormControl>
             </form>
