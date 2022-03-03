@@ -2,18 +2,21 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { Container, Typography, TextField, Button, Select, InputLabel, FormControl, FormHelperText, MenuItem } from '@material-ui/core';
 import { useHistory, useParams } from 'react-router-dom';
 import { busca, buscaId, put, post } from '../../../services/Service';
-import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Theme';
 import Posts from '../../../models/Post';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import './RegisterPost.css';
-
 
 function RegisterPost() {
 
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage('token');
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token === "") {

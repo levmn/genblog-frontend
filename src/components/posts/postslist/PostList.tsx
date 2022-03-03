@@ -1,19 +1,23 @@
-import React, {useEffect, useState} from 'react'
-import {Link, useHistory} from 'react-router-dom';
-import {Box, Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
+import React, { useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom';
+import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import Post from '../../../models/Post';
-import useLocalStorage from 'react-use-localstorage';
 import { busca } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import './PostList.css';
 
 function PostList() {
 
   const [post, setPost] = useState<Post[]>([])
-  const [token, setToken] = useLocalStorage('token');
   let history = useHistory();
 
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens 
+  );
+
   useEffect(() => {
-    if (token == ''){
+    if (token === ''){
       alert("Você precisa estar logado.")
       history.push("/login")
     }

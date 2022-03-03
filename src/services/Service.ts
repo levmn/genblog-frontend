@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://insetinho.herokuapp.com'
+    baseURL: 'https://insectario.herokuapp.com/'
 })
 
 export const login = async(url: any, dados: any, setDado: any) => {

@@ -3,7 +3,9 @@ import {AppBar, Box, Toolbar, IconButton, Typography, Button, Menu, MenuItem} fr
 import { createStyles, makeStyles, Theme, } from '@material-ui/core/styles';
 import BugIcon from '@material-ui/icons/BugReport';
 import {Link, useHistory} from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { addToken } from '../../../store/tokens/actions';
 import './Navbar.css';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,11 +23,15 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 function Navbar() {
-  const [token, setToken] = useLocalStorage('token');
+  
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   let history = useHistory();
+  const dispatch = useDispatch();
 
   function goLogout(){
-    setToken('')
+    dispatch(addToken(''));
     alert("Usuário deslogado.")
     history.push('/login')
   }
@@ -43,71 +49,78 @@ function Navbar() {
     setAnchorEl(null);
   };
 
-  return (
-    <div className={classes.root}>
+  var navbarComponent;
+
+  if(token !== ""){
+    navbarComponent = <div className={classes.root}>
    
-   <AppBar position="static" className='bg'>
-      <Toolbar variant="dense" className='bar'>
-         
-        <Box>
-        <Link to="/home" className='text-decorator-none'>
-            <Typography variant="h6" className='titulo'>
-              BlogPessoal
-            </Typography>
-        </Link>
-        </Box>
-
-        <Box display="flex">
-                    <Box className='m'>
-                      <Link to="/home" className='text-decorator-none text-color'>
-                        <Button color="inherit" style={{color: 'white'}}>home</Button>
-                      </Link>
-                    </Box>
-                    
-                    <Box className='m'>
-                      <Link to='/postagens' className='text-decorator-none text-color'>
-                          <Button color="inherit">postagens</Button>
-                      </Link>
-                    </Box>
-                    
-                    <Box className='m'>
-                      <Link to='/temas' className='text-decorator-none text-color'>
-                          <Button color="inherit">temas</Button>
-                      </Link>
-                    </Box>
-
-                    <Box className='m'>
-                      <Link to='/formulariotema' className='text-decorator-none text-color'>
-                          <Button color="inherit">cadastrar temas</Button>
-                      </Link>
-                    </Box>
-            </Box>
-
-          {auth && (
-            <Box>
-              <IconButton 
-              aria-label="account of current user" 
-              aria-controls="menu-appbar" 
-              aria-haspopup="true" onClick={handleMenu} 
-              color="inherit">
-                    <BugIcon style={{ fontSize: 30 }}/>
-              </IconButton>
-              <Menu 
-              id="menu-appbar" 
-              anchorEl={anchorEl} 
-              anchorOrigin={{ vertical: 'top', horizontal: 'right', }} keepMounted 
-              transformOrigin={{ vertical: 'top', horizontal: 'right', }} 
-              open={open} onClose={handleClose}>
-
-                <MenuItem onClick={goLogout} style={{color: '#000000'}}>Logout</MenuItem>  
-
-              </Menu>
-            </Box>            
-          )}
-
-        </Toolbar>
-      </AppBar>
-    </div>
+    <AppBar position="static" className='bg'>
+       <Toolbar variant="dense" className='bar'>
+          
+         <Box>
+         <Link to="/home" className='text-decorator-none'>
+             <Typography variant="h6" className='titulo'>
+               BlogPessoal
+             </Typography>
+         </Link>
+         </Box>
+ 
+         <Box display="flex">
+                     <Box className='m'>
+                       <Link to="/home" className='text-decorator-none text-color'>
+                         <Button color="inherit" style={{color: 'white'}}>home</Button>
+                       </Link>
+                     </Box>
+                     
+                     <Box className='m'>
+                       <Link to='/postagens' className='text-decorator-none text-color'>
+                           <Button color="inherit">postagens</Button>
+                       </Link>
+                     </Box>
+                     
+                     <Box className='m'>
+                       <Link to='/temas' className='text-decorator-none text-color'>
+                           <Button color="inherit">temas</Button>
+                       </Link>
+                     </Box>
+ 
+                     <Box className='m'>
+                       <Link to='/formulariotema' className='text-decorator-none text-color'>
+                           <Button color="inherit">cadastrar temas</Button>
+                       </Link>
+                     </Box>
+             </Box>
+ 
+           {auth && (
+             <Box>
+               <IconButton 
+               aria-label="account of current user" 
+               aria-controls="menu-appbar" 
+               aria-haspopup="true" onClick={handleMenu} 
+               color="inherit">
+                     <BugIcon style={{ fontSize: 30 }}/>
+               </IconButton>
+               <Menu 
+               id="menu-appbar" 
+               anchorEl={anchorEl} 
+               anchorOrigin={{ vertical: 'top', horizontal: 'right', }} keepMounted 
+               transformOrigin={{ vertical: 'top', horizontal: 'right', }} 
+               open={open} onClose={handleClose}>
+ 
+                 <MenuItem onClick={goLogout} style={{color: '#000000'}}>Logout</MenuItem>  
+ 
+               </Menu>
+             </Box>            
+           )}
+ 
+         </Toolbar>
+       </AppBar>
+     </div>
+  }
+  return (
+    <>
+      { navbarComponent }
+    </>
   );
 }
 

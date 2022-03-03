@@ -9,6 +9,7 @@ function RegisterUser(){
 
     let history = useHistory();
     const [confirmarSenha, setConfirmarSenha] = useState<String>("")
+    
     const [user, setUser] = useState<User>(
         {
             id: 0,
@@ -63,13 +64,17 @@ function RegisterUser(){
                             Cadastre-se
                         </Typography>
                         <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
-                            id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth/>
+                            id="nome" label="Nome" placeholder="Insira seu nome de preferência." variant="outlined" 
+                            name="nome" margin="normal" required fullWidth/>
                         <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id="usuario" label="usuário" variant="outlined" name="usuario" margin="normal" fullWidth/>
+                            id="usuario" label="E-mail" placeholder="Insira um e-mail válido." variant="outlined" 
+                            name="usuario" margin="normal" required fullWidth/>
                         <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id="senha" label="senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth/>
+                            id="senha" label="Senha" placeholder="Insira uma senha com o mínimo de 8 caracteres." 
+                            variant="outlined" name="senha" margin="normal" type="password" required fullWidth/>
                         <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
-                            id="confirmarSenha" label="confirmar senha" variant="outlined" name="confirmarSenha" margin="normal" type="password" fullWidth/>
+                            id="confirmarSenha" label="Confirmar senha" placeholder="Repita a senha para confirmação."
+                            variant="outlined" name="confirmarSenha" margin="normal" type="password" required fullWidth/>
                         <Box marginTop={2} textAlign="center">
                             <Link to="/login" className='text-decorator-none'>
                                 <Button variant="outlined" className='cancel-button'>

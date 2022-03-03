@@ -3,13 +3,17 @@ import {Box, Grid, Typography, Button} from '@material-ui/core';
 import PostsTab from '../../components/posts/poststab/PostTab';
 import ModalPost from '../../components/posts/modalposts/ModalPost';
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
 import './Home.css';
+
 
 function Home() {
 
   let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
     useEffect(() => {
         if (token === "") {
