@@ -15,11 +15,15 @@ import RegisterPost from './components/posts/registerposts/RegisterPost';
 import RegisterTheme from './components/themes/registertheme/RegisterTheme';
 import DeletePost from './components/posts/deleteposts/DeletePost';
 import DeleteTheme from './components/themes/deletetheme/DeleteTheme';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
+      
       <Router>
         <Navbar/>
           <Switch>

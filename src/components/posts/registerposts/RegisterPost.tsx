@@ -6,6 +6,7 @@ import Tema from '../../../models/Theme';
 import Posts from '../../../models/Post';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 import './RegisterPost.css';
 
 function RegisterPost() {
@@ -20,7 +21,16 @@ function RegisterPost() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado.")
+            toast.error("Você precisa estar logado.", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
             history.push("/login")
 
         }
@@ -88,14 +98,32 @@ function RegisterPost() {
                     'Authorization': token
                 }
             })
-            alert('Post atualizado com sucesso!');
+            toast.success("Seu post foi atualizado com sucesso!", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
         } else {
             post(`/postagens`, posts, setPost, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Seu post foi publicado com sucesso!');
+            toast.success("Seu post foi publicado com sucesso!", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
         }
         back()
 

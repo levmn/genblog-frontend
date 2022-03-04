@@ -5,6 +5,7 @@ import Tema from '../../../models/Theme';
 import { buscaId, put, post } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 import './RegisterTheme.css';
 
 function RegisterTheme() {
@@ -23,7 +24,16 @@ function RegisterTheme() {
 
     useEffect(() => {
         if(token === ''){
-            alert("Você precisa estar logado.")
+            toast.error("Você precisa estar logado.", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
             history.push('/login')
         }
     }, [token])
@@ -60,7 +70,16 @@ function RegisterTheme() {
                     'Authorization': token
                 }
             })
-            alert("Tema atualizado com sucesso!");
+            toast.success("Tema atualizado com sucesso!", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
         }else{
             // console.log(tema)
             post(`/temas`, tema, setTema, {
@@ -68,7 +87,16 @@ function RegisterTheme() {
                     'Authorization': token
                 }
             })
-            alert("Tema cadastrado com sucesso!");
+            toast.success("Tema cadastrado com sucesso!", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+              });
         }
         back()
     }
@@ -82,7 +110,7 @@ function RegisterTheme() {
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastre um tema:</Typography>
                 <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
-                id="descricao" label="descrição" variant="outlined" name="descricao" margin="normal" fullWidth />
+                id="descricao" label="Descrição" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" className='button'>
                     Finalizar
                 </Button>
