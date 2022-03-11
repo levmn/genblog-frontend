@@ -82,24 +82,63 @@ function RegisterUser(){
                         align="center" className='register'>
                             Cadastre-se
                         </Typography>
-                        <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
-                            id="nome" label="Nome" placeholder="Insira seu nome de preferência." variant="outlined" 
-                            name="nome" margin="normal" required fullWidth/>
-                        <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id="usuario" label="E-mail" placeholder="Insira um e-mail válido." variant="outlined" 
-                            name="usuario" margin="normal" required fullWidth/>
-                        <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id="senha" label="Senha" placeholder="Insira uma senha com o mínimo de 8 caracteres." 
-                            variant="outlined" name="senha" margin="normal" type="password" required fullWidth/>
-                        <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
-                            id="confirmarSenha" label="Confirmar senha" placeholder="Repita a senha para confirmação."
-                            variant="outlined" name="confirmarSenha" margin="normal" type="password" required fullWidth/>
+                        <TextField 
+                            value={user.nome} 
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
+                            id="nome" 
+                            label="Nome" 
+                            placeholder="Insira seu nome de preferência." 
+                            variant="outlined" 
+                            name="nome"
+                            margin="normal" 
+                            required 
+                            fullWidth/>
+
+                        <TextField 
+                            value={user.usuario} 
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id="usuario" 
+                            label="E-mail" 
+                            placeholder="Insira um e-mail válido." 
+                            variant="outlined" 
+                            name="usuario" 
+                            margin="normal" 
+                            required 
+                            fullWidth/>
+
+                        <TextField 
+                            value={user.senha} 
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id="senha" 
+                            label="Senha" 
+                            placeholder="Insira uma senha com o mínimo de 8 caracteres." 
+                            variant="outlined" 
+                            name="senha" 
+                            margin="normal" 
+                            type="password" 
+                            required 
+                            fullWidth/>
+
+                        <TextField 
+                            value={confirmarSenha} 
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                            id="confirmarSenha" 
+                            label="Confirmar senha" 
+                            placeholder="Repita a senha para confirmação."
+                            variant="outlined" 
+                            name="confirmarSenha" 
+                            margin="normal" 
+                            type="password" 
+                            required 
+                            fullWidth/>
+
                         <Box marginTop={2} textAlign="center">
                             <Link to="/login" className='text-decorator-none'>
                                 <Button variant="outlined" className='cancel-button'>
                                     Cancelar
                                 </Button>
                             </Link>
+                            
                                 <Button type="submit" variant="outlined" className='register-button'>
                                     Cadastrar
                                 </Button>

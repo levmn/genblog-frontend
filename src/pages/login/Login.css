@@ -2,6 +2,10 @@
     text-decoration: none;
 }
 
+.bgLogin{
+    background-color: black;
+}
+
 .login{
     color: #095f04!important;
 }
@@ -35,3 +39,7 @@
     background-position: center;
 }
 
+.login{
+    background-color: white;
+    border-radius: 8px;
+}

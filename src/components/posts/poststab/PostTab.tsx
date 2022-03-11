@@ -16,7 +16,7 @@ function PostTab() {
       <TabContext value={value}>
         <AppBar position="static">
           <Tabs className='bgtab' centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Todas as postagens" value="1"/>
+            <Tab label="Postagens" value="1"/>
             <Tab label="Sobre" value="2" />
           </Tabs>
         </AppBar>
@@ -29,13 +29,11 @@ function PostTab() {
         <TabPanel value="2">
           <Box display="flex" flexDirection="row">
             <Box padding={5}>
-              <Typography variant="body1" gutterBottom align="justify" className='aboutme'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-              Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima 
-              inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing 
-              elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere 
-              neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur 
-              at ullam odit, nesciunt est nulla nihil excepturi!
+              <Typography variant="body1" gutterBottom align="justify" className='aboutme'>
+                Oi, esse é o insectário, aqui você pode falar sobre bugs (os virtuais e os reais),
+                falhas na matrix, experiências sobrenaturais online, nostalgias tecnológicas e afins.
+
+                
               </Typography>
             </Box>
             <Box>

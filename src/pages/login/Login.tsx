@@ -68,7 +68,7 @@ function Login(){
     return(
         <Grid container direction="row" justifyContent="center" alignItems="center">
             <Grid xs={6} alignItems="center">
-                <Box paddingX={20}>
+                <Box paddingX={20} >
                     <form onSubmit={onSubmit}>
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" 
                         align="center" className='bold'>
@@ -77,9 +77,11 @@ function Login(){
                         <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
                             id="usuario" label="E-mail" placeholder="Insira o e-mail cadastrado."
                             variant="outlined" name="usuario" margin="normal" required fullWidth/>
+                            
                         <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id="senha" label="Senha" placeholder="Insira a senha cadastrada." 
+                            id="senha" label="Senha" placeholder="Insira a senha cadastrada."
                             variant="outlined" name="senha" margin="normal" type="password" required fullWidth/>
+
                         <Box marginTop={2} textAlign="center">
                                 <Button type="submit" variant="outlined" className='button'>
                                     Logar

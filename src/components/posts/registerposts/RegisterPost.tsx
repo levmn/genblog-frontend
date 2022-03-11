@@ -138,12 +138,12 @@ function RegisterPost() {
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Faça um post!</Typography>
                 <TextField value={posts.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)} id="titulo" 
-                label="título" variant="outlined" name="titulo" margin="normal" fullWidth />
+                label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={posts.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)} id="texto" 
-                label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl>
-                    <InputLabel id="demo-simple-select-helper-label">tema</InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
                     <Select
                          labelId="demo-simple-select-helper-label"
                          id="demo-simple-select-helper"

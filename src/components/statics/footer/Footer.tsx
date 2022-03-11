@@ -20,11 +20,11 @@ function Footer() {
       <Grid alignItems="center" item xs={12}>
         <Box className="box">
           <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-            <Typography variant="h6" align="center" gutterBottom className='redes'>Siga-nos nas redes sociais</Typography>
+            <Typography variant="h6" align="center" gutterBottom className='redes'>Me siga nas redes sociais!</Typography>
           </Box>
           
           <Box display="flex" alignItems="center" justifyContent="center">
-            <a href="https://youtu.be/SW7TdP1HzDU" target="_blank" rel="noreferrer" className="m">
+            <a href="https://youtu.be/zK5ZdzRnQE8" target="_blank" rel="noreferrer" className="m">
               <HeadsetIcon style={{ fontSize: 35, color: "white" }}/>
             </a>
             <a href="https://github.com/levmn" target="_blank" rel="noreferrer">

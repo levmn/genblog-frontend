@@ -60,7 +60,7 @@ function ModalPost () {
         <Button
           variant="outlined"
           className="modal-button"
-          onClick={handleOpen}>Criar post</Button>
+          onClick={handleOpen}>Criar postagens</Button>
 
         <Modal
           open={open}
