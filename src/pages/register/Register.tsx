@@ -140,8 +140,8 @@ function RegisterUser(){
 
                          <TextField 
                             value={user.foto}
-                            className='campo notchedOutline'  
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                            className='campo'  
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id="foto"
                             label="Foto do usuário"
                             placeholder='Insira o link da sua imagem de preferência. (Opcional)'

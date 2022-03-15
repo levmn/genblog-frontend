@@ -86,7 +86,7 @@ function PostList() {
 
               <Box display="flex" justifyContent="center" flexDirection="row">
                 <Box className='pAvatar'>
-                  <Avatar src={ post.usuario?.foto }></Avatar>
+                  <Avatar src={ post.usuario?.foto }  alt={ post.usuario?.nome } title={ post.usuario?.nome }></Avatar>
                 </Box>
                 
                 <Box display="flex" flexDirection="column">  
