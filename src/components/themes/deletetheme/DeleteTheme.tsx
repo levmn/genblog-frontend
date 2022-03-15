@@ -78,10 +78,10 @@ function DeleteTheme() {
         <Card variant="outlined">
           <CardContent>
             <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
+              <Typography color="textSecondary" gutterBottom className='fontDel'>
                 Deseja deletar o tema?
               </Typography>
-              <Typography color="textSecondary">
+              <Typography color="textSecondary" className='postTxt'>
                 {tema?.descricao}
               </Typography>
             </Box>
@@ -89,12 +89,12 @@ function DeleteTheme() {
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-                <Button onClick={sim} variant="contained" className='sim-button' size='large'>
+                <Button onClick={sim} variant="contained" className='sim-button fontBtn'>
                   Sim
                 </Button>
               </Box>
               <Box mx={2}>
-                <Button onClick={nao} variant="contained" size='large' className='nao-button'>
+                <Button onClick={nao} variant="contained" className='nao-button fontBtn'>
                   Não
                 </Button>
               </Box>
