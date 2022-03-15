@@ -86,7 +86,7 @@ function PostList() {
 
               <Box display="flex" justifyContent="center" flexDirection="row">
                 <Box className='pAvatar'>
-                  <Avatar src={ user.foto }></Avatar>
+                  <Avatar src={ post.usuario?.foto }></Avatar>
                 </Box>
                 
                 <Box display="flex" flexDirection="column">  
@@ -123,10 +123,7 @@ function PostList() {
               </Box>
 
             </CardContent>
-            
-            <CardActions>
-              
-            </CardActions>
+    
           </Card>
         </Box>
       ))

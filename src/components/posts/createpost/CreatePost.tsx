@@ -7,7 +7,9 @@ import Posts from '../../../models/Post';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/userReducer';
 import { toast } from 'react-toastify';
+import User from '../../../models/User';
 import './CreatePost.css';
+
 
 function CreatePost() {
 
@@ -17,6 +19,10 @@ function CreatePost() {
 
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
+    );
+
+    const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
     );
 
     useEffect(() => {
@@ -48,6 +54,14 @@ function CreatePost() {
         texto: '',
         tema: null,
         usuario: null
+    })
+
+    const [user, setUser] = useState<User>({
+        id: +userId, 
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     useEffect(() => { 
@@ -85,7 +99,8 @@ function CreatePost() {
         setPost({
             ...posts,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
 
     }

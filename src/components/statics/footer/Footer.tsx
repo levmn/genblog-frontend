@@ -33,7 +33,9 @@ function Footer() {
           </Box>
 
           <Box display="flex" alignItems="center">
-            <img src="https://i.imgur.com/Q91RbCI.gif" style={{ width: 80 }} alt="minecraft bee" />
+            <a href="https://www.instagram.com/insetoweb/" target="_blank" rel="noreferrer" className='bald text-decorator-none redes'>
+              <img src="https://i.imgur.com/Q91RbCI.gif" style={{ width: 80 }} alt="minecraft bee" />
+            </a>
           </Box>
 
           <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
@@ -49,7 +51,7 @@ function Footer() {
         </Box>
             <Box display="flex" justifyContent="center">
               <Typography className='redes tiny'>
-                made by <a href="https://github.com/levmn" target="_blank" rel="noreferrer" className='bald text-decorator-none redes'>levi</a>.
+                made by <a href="https://www.instagram.com/insetoweb/" target="_blank" rel="noreferrer" className='bald text-decorator-none redes'>levi</a>.
               </Typography>
             </Box>
       </Grid>
