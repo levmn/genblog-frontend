@@ -2,7 +2,7 @@ import React, {useState, useEffect, ChangeEvent} from 'react';
 import {Grid, Box, Typography, TextField, Button} from '@material-ui/core';
 import {Link, useHistory} from 'react-router-dom';
 import User from '../../models/User';
-import {cadastroUsuario} from '../../services/Service'
+import {cadastroUsuario} from '../../services/Service';
 import { toast } from 'react-toastify';
 import './Register.css';
 
@@ -16,7 +16,8 @@ function RegisterUser(){
             id: 0,
             nome: '',
             usuario: '',
-            senha: ''
+            senha: '',
+            foto: ''
         })
 
     const [userResult, setUserResult] = useState<User>(
@@ -24,7 +25,8 @@ function RegisterUser(){
             id: 0,
             nome: '',
             usuario: '',
-            senha: ''
+            senha: '',
+            foto: ''
         })
 
     useEffect(() => {
@@ -73,7 +75,7 @@ function RegisterUser(){
     }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'> 
+        <Grid container direction='row' justifyContent='center' alignItems='center' className='bgRegister'> 
             <Grid item xs={6} className='register-bg'></Grid>
             <Grid item xs={6} alignItems='center'>
                 <Box paddingX={10}>
@@ -84,6 +86,7 @@ function RegisterUser(){
                         </Typography>
                         <TextField 
                             value={user.nome} 
+                            className='campo'
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
                             id="nome" 
                             label="Nome" 
@@ -96,6 +99,7 @@ function RegisterUser(){
 
                         <TextField 
                             value={user.usuario} 
+                            className='campo'
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id="usuario" 
                             label="E-mail" 
@@ -108,6 +112,7 @@ function RegisterUser(){
 
                         <TextField 
                             value={user.senha} 
+                            className='campo'
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id="senha" 
                             label="Senha" 
@@ -120,7 +125,8 @@ function RegisterUser(){
                             fullWidth/>
 
                         <TextField 
-                            value={confirmarSenha} 
+                            value={confirmarSenha}
+                            className='campo notchedOutline'  
                             onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
                             id="confirmarSenha" 
                             label="Confirmar senha" 
@@ -132,14 +138,26 @@ function RegisterUser(){
                             required 
                             fullWidth/>
 
+                         <TextField 
+                            value={user.foto}
+                            className='campo notchedOutline'  
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                            id="foto"
+                            label="Foto do usuário"
+                            placeholder='Insira o link da sua imagem de preferência. (Opcional)'
+                            name="foto"
+                            variant="outlined"
+                            margin="normal"
+                            fullWidth/>
+
                         <Box marginTop={2} textAlign="center">
                             <Link to="/login" className='text-decorator-none'>
-                                <Button variant="outlined" className='cancel-button'>
+                                <Button variant="outlined" className='cancel-button regBtn'>
                                     Cancelar
                                 </Button>
                             </Link>
                             
-                                <Button type="submit" variant="outlined" className='register-button'>
+                                <Button type="submit" variant="outlined" className='register-button regBtn'>
                                     Cadastrar
                                 </Button>
                         </Box>

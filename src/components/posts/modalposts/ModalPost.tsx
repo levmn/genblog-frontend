@@ -3,7 +3,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import {Button,Box } from "@material-ui/core";
 import CloseIcon from '@material-ui/icons/Close';
-import RegisterPost from '../registerposts/RegisterPost';
+import RegisterPost from '../createpost/CreatePost';
 import './ModalPost.css';
 
 function getModalStyle() {
@@ -59,8 +59,8 @@ function ModalPost () {
     <div>
         <Button
           variant="outlined"
-          className="modal-button"
-          onClick={handleOpen}>Criar postagens</Button>
+          className='modal-button fontModal'
+          onClick={handleOpen}>Criar post</Button>
 
         <Modal
           open={open}

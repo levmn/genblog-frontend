@@ -1,3 +1,26 @@
+@import url(https://fontlibrary.org//face/dogica);
+
+@font-face {
+    font-family: 'DogicaPixelRegular';
+    src: url(http://openfontlibrary.org/face/8bit-wonder);
+}
+
+.fontFooter{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 10px!important;
+}
+
+.tiny{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 8px!important;
+    margin-bottom: 10px!important;
+}
+
+.bald{
+    font-weight: 900!important;
+    color: #095f04!important;
+}
+
 .footerBg{
     background-color: black;
 }

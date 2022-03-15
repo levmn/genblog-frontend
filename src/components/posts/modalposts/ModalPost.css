@@ -1,3 +1,15 @@
+@import url(https://fontlibrary.org//face/dogica);
+
+@font-face {
+    font-family: 'DogicaPixelRegular';
+    src: url(http://openfontlibrary.org/face/8bit-wonder);
+}
+
+.fontModal{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 12px!important;
+}
+
 .cursor{
     cursor: pointer;
 }
@@ -13,7 +25,7 @@
 .modal-button:hover,
 .modal-button:focus{
     color: white!important;
-    background: grey!important;
+    background: #095f04!important;
     font-weight: bold!important;
     border-radius: 10px!important;
 }

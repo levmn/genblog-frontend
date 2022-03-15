@@ -5,17 +5,17 @@ import { busca, buscaId, put, post } from '../../../services/Service';
 import Tema from '../../../models/Theme';
 import Posts from '../../../models/Post';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import { toast } from 'react-toastify';
-import './RegisterPost.css';
+import './CreatePost.css';
 
-function RegisterPost() {
+function CreatePost() {
 
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
 
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 
@@ -46,7 +46,8 @@ function RegisterPost() {
         id: 0,
         titulo: '',
         texto: '',
-        tema: null
+        tema: null,
+        usuario: null
     })
 
     useEffect(() => { 
@@ -136,15 +137,16 @@ function RegisterPost() {
     return (
         <Container maxWidth="sm" className="top">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Faça um post!</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className='fontCreate'>Faça um post!</Typography>
                 <TextField value={posts.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)} id="titulo" 
-                label="Título" variant="outlined" name="titulo" margin="normal" fullWidth />
+                label="Título" placeholder="Título maneirinho do seu post." required variant="outlined" name="titulo" margin="normal" fullWidth />
                 <TextField value={posts.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)} id="texto" 
-                label="Texto" name="texto" variant="outlined" margin="normal" fullWidth />
+                label="Texto" placeholder="Texto irado." required name="texto" variant="outlined" margin="normal" fullWidth />
 
                 <FormControl>
                     <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
                     <Select
+                         className='btn'
                          labelId="demo-simple-select-helper-label"
                          id="demo-simple-select-helper"
                          onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
@@ -154,13 +156,13 @@ function RegisterPost() {
                          })}>
                          {
                              temas.map(tema => (
-                                 <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+                                 <MenuItem className='btn' value={tema.id}>{tema.descricao}</MenuItem>
                              ))
                          }
                     </Select>
 
-                    <FormHelperText>Escolha um tema para o seu post.</FormHelperText>
-                    <Button type="submit" variant="contained" className='button'>
+                    <FormHelperText className='choose' >Escolha um tema.</FormHelperText>
+                    <Button type="submit" variant="contained" className='button btn top'>
                         Publicar
                     </Button>
                 </FormControl>
@@ -169,4 +171,4 @@ function RegisterPost() {
     )
 }
 
-export default RegisterPost;
+export default CreatePost;

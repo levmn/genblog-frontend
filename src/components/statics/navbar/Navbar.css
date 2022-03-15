@@ -1,3 +1,19 @@
+@import url(https://fontlibrary.org//face/dogica);
+
+@font-face {
+    font-family: 'DogicaPixelRegular';
+    src: url(http://openfontlibrary.org/face/8bit-wonder);
+}
+
+.fontNav{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 12px!important;
+}
+
+.bold{
+    font-weight: bold;
+}
+
 .bg{
     background: radial-gradient(circle, #000000, #000000, #095f04);
 }
@@ -17,7 +33,10 @@
 }
 
 .titulo{
+    font-family: 'DogicaPixelRegular'!important;
     color: white;
+    font-size: 20px!important;
+    font-weight: 900!important;
 }
 
 .text-color{

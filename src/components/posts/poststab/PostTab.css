@@ -1,5 +1,20 @@
-.title{
-    font-weight: bold;
+@import url(https://fontlibrary.org//face/dogica);
+
+@font-face {
+    font-family: 'DogicaPixelRegular';
+    src: url(http://openfontlibrary.org/face/8bit-wonder);
+}
+
+.titleTab{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 12px!important;
+    font-weight: bold!important;
+ }
+
+ .aboutFont{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 15px!important;
+    inline-size: 30em;
  }
 
 .bgtab{

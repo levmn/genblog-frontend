@@ -4,16 +4,16 @@ import {useHistory, useParams} from 'react-router-dom';
 import Tema from '../../../models/Theme';
 import { buscaId, put, post } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import { toast } from 'react-toastify';
-import './RegisterTheme.css';
+import './CreateTheme.css';
 
-function RegisterTheme() {
+function CreateTheme() {
 
     let history = useHistory();
     const { id } = useParams<{id: string}>();
     
-    const token = useSelector<TokenState, TokenState["tokens"]>(
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 
@@ -108,10 +108,10 @@ function RegisterTheme() {
     return (
         <Container maxWidth="sm" className="top">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastre um tema:</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" className='fontTheme'>Cadastre um tema!</Typography>
                 <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}
-                id="descricao" label="Descrição" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" className='button'>
+                id="descricao" label="Descrição" placeholder="Descrição show de bola." required variant="outlined" name="descricao" margin="normal" fullWidth />
+                <Button type="submit" variant="contained" className='button btnTheme top'>
                     Finalizar
                 </Button>
             </form>
@@ -119,4 +119,4 @@ function RegisterTheme() {
     )
 }
 
-export default RegisterTheme;
+export default CreateTheme;

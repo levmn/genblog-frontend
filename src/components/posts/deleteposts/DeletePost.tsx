@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import Post from '../../../models/Post';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import { toast } from 'react-toastify';
 import './DeletePost.css';
 
@@ -13,7 +13,7 @@ function DeletePost() {
   let history = useHistory();
   const { id } = useParams<{id: string}>();
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
   
@@ -78,10 +78,10 @@ function DeletePost() {
         <Card variant="outlined" >
           <CardContent>
             <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
+              <Typography color="textSecondary" gutterBottom className='fontDel'>
                 Deseja deletar o post?
               </Typography>
-              <Typography color="textSecondary" >
+              <Typography className='postTxt'>
               {post?.titulo}
               </Typography>
             </Box>
@@ -90,12 +90,12 @@ function DeletePost() {
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-              <Button onClick={sim} variant="contained" className='sim-button' size='large'>
+              <Button onClick={sim} variant="contained" className='sim-button fontBtn'>
                 Sim
               </Button>
               </Box>
               <Box>
-              <Button onClick={nao} variant="contained" size='large' className='nao-button'>
+              <Button onClick={nao} variant="contained" className='nao-button fontBtn'>
                 Não
               </Button>
               </Box>

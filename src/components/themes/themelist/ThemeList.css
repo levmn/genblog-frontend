@@ -1,3 +1,27 @@
+@import url(https://fontlibrary.org//face/dogica);
+
+@font-face {
+    font-family: 'DogicaPixelRegular';
+    src: url(http://openfontlibrary.org/face/8bit-wonder);
+}
+
+.themeTitle{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 12px!important;
+    margin-bottom: 20px!important;
+}
+
+.themeText{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 20px!important;
+    font-weight: 500!important;
+}
+
+.btnTheme{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 12px!important;
+}
+
 .text-decorator-none{
     text-decoration: none;
 }

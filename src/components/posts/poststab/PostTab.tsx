@@ -16,8 +16,8 @@ function PostTab() {
       <TabContext value={value}>
         <AppBar position="static">
           <Tabs className='bgtab' centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Postagens" value="1"/>
-            <Tab label="Sobre" value="2" />
+            <Tab className='titleTab' label="Postagens" value="1"/>
+            <Tab className='titleTab' label="Sobre" value="2" />
           </Tabs>
         </AppBar>
         <TabPanel value="1" >
@@ -27,13 +27,11 @@ function PostTab() {
         </TabPanel>
 
         <TabPanel value="2">
-          <Box display="flex" flexDirection="row">
+          <Box display="flex" flexDirection="row" justifyContent='center' alignItems='center'>
             <Box padding={5}>
-              <Typography variant="body1" gutterBottom align="justify" className='aboutme'>
+              <Typography variant="body1" gutterBottom align="justify" className='aboutme aboutFont'>
                 Oi, esse é o insectário, aqui você pode falar sobre bugs (os virtuais e os reais),
                 falhas na matrix, experiências sobrenaturais online, nostalgias tecnológicas e afins.
-
-                
               </Typography>
             </Box>
             <Box>
@@ -41,7 +39,6 @@ function PostTab() {
             </Box>
           </Box>
         </TabPanel>
-
       </TabContext>
     </>
   );

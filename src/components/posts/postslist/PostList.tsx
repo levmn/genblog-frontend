@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography, Avatar, Grid } from '@material-ui/core';
 import Post from '../../../models/Post';
-import { busca } from '../../../services/Service';
+import { busca, buscaId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
 import { toast } from 'react-toastify';
+import User from '../../../models/User';
+import { UserState } from '../../../store/tokens/userReducer';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import './PostList.css';
 
 function PostList() {
@@ -13,9 +16,21 @@ function PostList() {
   const [post, setPost] = useState<Post[]>([])
   let history = useHistory();
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const id = useSelector<UserState, UserState["id"]>(
+    (state) => state.id
+  );
+
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens 
   );
+
+  const [user, setUser] = useState<User>({
+    id: +id,   
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: ''
+  })
 
   useEffect(() => {
     if (token === ''){
@@ -33,6 +48,14 @@ function PostList() {
     }
   }, [token])
 
+  async function findById(id: string) {
+    buscaId(`/usuarios/${id}`, setUser, {
+        headers: {
+            'Authorization': token
+        }
+    })
+}
+
   async function getPost(){
     await busca('/postagens', setPost, {
       headers: {
@@ -40,6 +63,12 @@ function PostList() {
       }
     })
   }
+
+  useEffect(() => {
+    if (id !== undefined) {
+        findById(id)
+    }
+}, [id])
 
   useEffect(() => {
     getPost()
@@ -51,44 +80,55 @@ function PostList() {
       {
         post.map(post => (
 
-      <Box m={2} >
-        <Card variant="outlined">
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Postagens
-            </Typography>
-            <Typography variant="h5" component="h2">
-              {post.titulo}
-            </Typography>
-            <Typography variant="body2" component="p">
-              {post.texto}
-            </Typography>
-            <Typography variant="body2" component="p">
-              {post.tema?.descricao}
-            </Typography>
-          </CardContent>
-          
-          <CardActions>
-            <Box display="flex" justifyContent="center" mb={1.5}>
+        <Box display="flex" justifyContent="center" m={4} >
+          <Card variant="outlined">
+            <CardContent>
 
-              <Link to={`/formulariopost/${post.id}`} className="text-decorator-none" >
-                <Box mx={1}>
-                  <Button variant="contained" className="marginLeft update-button" size='small' >
-                    atualizar
-                  </Button>
+              <Box display="flex" justifyContent="center" flexDirection="row">
+                <Box className='pAvatar'>
+                  <Avatar src={ user.foto }></Avatar>
                 </Box>
-              </Link>
-              <Link to={`/deletarpost/${post.id}`} className="text-decorator-none">
-                <Box mx={1}>
-                  <Button variant="contained" size='small' className='delete-button'>
-                    deletar
-                  </Button>
+                
+                <Box display="flex" flexDirection="column">  
+                  <Typography variant="h5" component="h2" className='postTitle'>
+                    {post.titulo}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" gutterBottom component="p" className='postTheme'>
+                    Tema: {post.tema?.descricao}
+                  </Typography>
                 </Box>
-              </Link>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
+              </Box>
+
+              <Box display="flex" justifyContent="center">
+                <Typography variant="body2" component="p" className='breakLines postText'>
+                  {post.texto}
+                </Typography>
+              </Box>
+
+              <Box display="flex" flexDirection="row" className='pTop pLeft' mb={1.5}>
+                <Link to={`/formulariopost/${post.id}`} className="text-decorator-none" >
+                  <Box mx={1}>
+                    <Button variant="contained" className="update-button btnFont" >
+                      <EditIcon />
+                    </Button>
+                  </Box>
+                </Link>
+                <Link to={`/deletarpost/${post.id}`} className="text-decorator-none">
+                  <Box mx={1}>
+                    <Button variant="contained" className='delete-button btnFont'>
+                      <DeleteIcon />
+                    </Button>
+                  </Box>
+                </Link>
+              </Box>
+
+            </CardContent>
+            
+            <CardActions>
+              
+            </CardActions>
+          </Card>
+        </Box>
       ))
       }
     </>

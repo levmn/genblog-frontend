@@ -4,7 +4,7 @@ import { createStyles, makeStyles, Theme, } from '@material-ui/core/styles';
 import BugIcon from '@material-ui/icons/BugReport';
 import {Link, useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import { addToken } from '../../../store/tokens/actions';
 import { toast } from 'react-toastify';
 import './Navbar.css';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function Navbar() {
   
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
   let history = useHistory();
@@ -69,8 +69,8 @@ function Navbar() {
           
          <Box>
          <Link to="/home" className='text-decorator-none'>
-             <Typography variant="h6" className='titulo'>
-               BlogPessoal
+             <Typography variant="h6" className='titulo font'>
+               Insectario
              </Typography>
          </Link>
          </Box>
@@ -78,25 +78,25 @@ function Navbar() {
          <Box display="flex">
                      <Box className='m'>
                        <Link to="/home" className='text-decorator-none text-color'>
-                         <Button color="inherit" style={{color: 'white'}}>home</Button>
+                         <Button color="inherit" style={{color: 'white'}} className='fontNav bold'>home</Button>
                        </Link>
                      </Box>
                      
                      <Box className='m'>
                        <Link to='/postagens' className='text-decorator-none text-color'>
-                           <Button color="inherit">postagens</Button>
+                           <Button color="inherit" className='fontNav bold'>postagens</Button>
                        </Link>
                      </Box>
                      
                      <Box className='m'>
                        <Link to='/temas' className='text-decorator-none text-color'>
-                           <Button color="inherit">temas</Button>
+                           <Button color="inherit" className='fontNav bold'>temas</Button>
                        </Link>
                      </Box>
  
                      <Box className='m'>
                        <Link to='/formulariotema' className='text-decorator-none text-color'>
-                           <Button color="inherit">cadastrar temas</Button>
+                           <Button color="inherit" className='fontNav bold'>cadastrar temas</Button>
                        </Link>
                      </Box>
              </Box>
@@ -117,7 +117,7 @@ function Navbar() {
                transformOrigin={{ vertical: 'top', horizontal: 'right', }} 
                open={open} onClose={handleClose}>
  
-                 <MenuItem onClick={goLogout} style={{color: '#000000'}}>Logout</MenuItem>  
+                 <MenuItem onClick={goLogout} style={{color: '#000000'}} className='fontNav'>Logout</MenuItem>  
  
                </Menu>
              </Box>            

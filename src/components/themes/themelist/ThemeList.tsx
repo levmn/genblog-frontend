@@ -4,14 +4,14 @@ import {Box, Card, CardActions, CardContent, Button, Typography} from '@material
 import Tema from '../../../models/Theme'
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import { toast } from 'react-toastify';
 import './ThemeList.css';
 
 function ThemeList() {
   const [tema, setTema] = useState<Tema[]>([])
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
@@ -51,13 +51,13 @@ function ThemeList() {
       {
         tema.map(tema => (      
 
-        <Box m={2} >
+        <Box display="flex" justifyContent="center" m={2} >
           <Card variant="outlined">
             <CardContent>
-                  <Typography color="textSecondary" gutterBottom>
+                  <Typography color="textSecondary" gutterBottom className='themeTitle'>
                   Tema
                   </Typography>
-                  <Typography variant="h5" component="h2">
+                  <Typography variant="h5" component="h2" className='themeText'>
                     {tema.descricao}
                   </Typography>
             </CardContent>
@@ -66,14 +66,14 @@ function ThemeList() {
 
                 <Link to={`/formulariotema/${tema.id}`} className="text-decorator-none">
                       <Box mx={1}>
-                      <Button variant="contained" className="marginLeft update-button" size='small' >
+                      <Button variant="contained" className='marginLeft update-button btnTheme' size='small' >
                           atualizar
                       </Button>
                       </Box>
                 </Link>
                 <Link to={`/deletartema/${tema.id}`} className="text-decorator-none">
                       <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary" className='delete-button'>
+                      <Button variant="contained" size='small' color="secondary" className='delete-button btnTheme'>
                           deletar
                       </Button>
                   </Box>

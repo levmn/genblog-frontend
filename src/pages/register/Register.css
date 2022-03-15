@@ -1,9 +1,32 @@
+@import url(https://fontlibrary.org//face/dogica);
+
+@font-face {
+    font-family: 'DogicaPixelRegular';
+    src: url(http://openfontlibrary.org/face/8bit-wonder);
+}
+
+.bgRegister{
+    background-color: black;
+}
+
+.campo{
+    background-color: whitesmoke;
+    border-radius: 5px!important;
+}
+
 .register{
-    font-weight: bold!important;
+    color: #095f04!important;
+    font-family: 'DogicaPixelRegular'!important;
+    font-weight: 800!important;
 }
 
 .text-decorator-none{
     text-decoration: none;
+}
+
+.regBtn{
+    font-family: 'DogicaPixelRegular'!important;
+    font-size: 12px!important;
 }
 
 .register-bg{
@@ -45,4 +68,9 @@
     background: #095f04!important;
     font-weight: bold!important;
     border-radius: 10px!important;
+}
+
+.notchedOutline {
+    border-width: 1px;
+    border-color: yellow!important;
 }

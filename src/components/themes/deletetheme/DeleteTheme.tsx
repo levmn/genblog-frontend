@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Theme';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/userReducer';
 import { toast } from 'react-toastify';
 import './DeleteTheme.css';
 
@@ -13,7 +13,7 @@ function DeleteTheme() {
   let history = useHistory();
   const { id } = useParams<{id: string}>();
   
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 
