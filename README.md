@@ -1,5 +1,5 @@
 <h2 align="center">🚀 Blog Generation (Bloco 3)</h2>
-<p>Repositório referente ao segundo bloco do bootcamp da <a href="https://brazil.generation.org">Generation Brasil</a>, contendo a aplicação front-end do projeto blog pessoal.</p>
+<p>Repositório referente ao terceiro bloco do bootcamp da <a href="https://brazil.generation.org">Generation Brasil</a>, contendo a aplicação front-end do projeto blog pessoal.</p>
 <p></p>
 
 ## 🔧 Tecnologias
