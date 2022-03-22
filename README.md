@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+<h2 align="center">🚀 Blog Generation (Bloco 3)</h2>
+<p>Repositório referente ao segundo bloco do bootcamp da <a href="https://brazil.generation.org">Generation Brasil</a>, contendo a aplicação front-end do projeto blog pessoal.</p>
+<p></p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🔧 Tecnologias
+* Typescript;
+* React JS;
+* react-router-dom;
+* react-toastify;
+* redux;
+* axios;
+* npm;
+* yarn;
+* Material UI;
+* VS Code;
+* Vercel.
 
-## Available Scripts
+## ⚙️ Funcionalidades
+* <b>Cadastro do Usuário:</b> Para navegar na aplicação é necessário que o usuário faça um cadastro com nome, e-mail, senha, opcionalmente uma foto e que esteja logado;
+* <b>CRUD de Temas:</b> É possível que o usuário cadastre a descrição de um tema para a postagem na aplicação, que pode ser posteriormente atualizado ou deletado;
+* <b>CRUD de Postagens:</b> É possível que o usuário crie uma postagem com título, texto e um tema, podendo também atualizar qualquer campo ou deletar essa postagem posteriormente;
+* <b>SPA:</b> Utilizando o conceito de <i>Single-Page Application</i> (Aplicativo de página única), é possível que o usuário navegue por uma página inicial (home) com uma tab que contém as postagens e um sobre o site, também é possível navegar pela lista de postagens, temas e cadastre temas.
 
-In the project directory, you can run:
+## 💾 Rodando o projeto
+<p>Para rodar o projeto basta clonar este repositório e dar o seguinte comando para instalar as dependências:</p>
 
-### `npm start`
+```
+yarn
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p>E o seguinte comando para rodar a aplicação localmente:</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+yarn start
+```
 
-### `npm test`
+<p>Você pode visualizar a aplicação back-end do projeto <a href="https://github.com/levmn/genblog_backend/">aqui</a>.</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🛰️ Status do projeto
+<p>O projeto está finalizado.</p>
